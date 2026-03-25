@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { searchMovie, getPopularMovies } from "../Services/api";
+import { searchMovie, getPopularMovies } from "../../api/movieAPI";
 
 const NavBar = ({
   searchQuery,

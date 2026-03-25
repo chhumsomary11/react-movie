@@ -1,7 +1,5 @@
-import { data } from "react-router-dom";
-
-const API_KEY = "ec14afb4c65425da89764e809863e0ab";
-const BASE_URL = "https://api.themoviedb.org/3";
+const API_KEY = import.meta.env.VITE_API_KEY;
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 export const getPopularMovies = async () => {
   const response = await fetch(`${BASE_URL}/movie/popular?api_key=${API_KEY}`);
@@ -15,8 +13,8 @@ export const getPopularMovies = async () => {
 export const searchMovie = async (query) => {
   const response = await fetch(
     `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(
-      query
-    )}`
+      query,
+    )}`,
   );
   const data = await response.json();
   return data.results;
